@@ -261,12 +261,14 @@ typedef struct {
     .ble_hci_uart_uart_parity   = DEFAULT_BT_LE_HCI_UART_PARITY,                        \
     .enable_tx_cca              = DEFAULT_BT_LE_TX_CCA_ENABLED,                         \
     .cca_rssi_thresh            = 256 - DEFAULT_BT_LE_CCA_RSSI_THRESH,                  \
+    .cca_drop_mode              = 0,                                                    \
+    .cca_low_tx_pwr             = 0,                                                    \
     .sleep_en                   = NIMBLE_SLEEP_ENABLE,                                  \
     .coex_phy_coded_tx_rx_time_limit = DEFAULT_BT_LE_COEX_PHY_CODED_TX_RX_TLIM_EFF,     \
     .dis_scan_backoff           = NIMBLE_DISABLE_SCAN_BACKOFF,                          \
     .ble_scan_classify_filter_enable         = 1,                                       \
     .main_xtal_freq             = CONFIG_XTAL_FREQ,                                     \
-    .version_num                = efuse_hal_chip_revision(),                            \
+    .version_num                = (uint8_t)efuse_hal_chip_revision(),                   \
     .cpu_freq_mhz               = CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ,                      \
     .ignore_wl_for_direct_adv   = 0,                                                    \
     .enable_pcl                 = DEFAULT_BT_LE_POWER_CONTROL_ENABLED,                  \
